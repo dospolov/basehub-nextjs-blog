@@ -1,15 +1,15 @@
-import Link from "next/link";
-import { clsx } from "clsx";
-import { BaseHubImage } from "basehub/next-image";
+import Link from "next/link"
+import { clsx } from "clsx"
+import { BaseHubImage } from "basehub/next-image"
 
 export default function CoverImage({
   title,
   url,
   slug,
 }: {
-  title: string;
-  url: string;
-  slug?: string;
+  title: string
+  url: string
+  slug?: string
 }) {
   const image = (
     <BaseHubImage
@@ -22,7 +22,7 @@ export default function CoverImage({
       })}
       src={url}
     />
-  );
+  )
 
   return (
     <div className="sm:mx-0">
@@ -34,5 +34,5 @@ export default function CoverImage({
         image
       )}
     </div>
-  );
+  )
 }

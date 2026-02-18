@@ -1,9 +1,9 @@
-import { Pump } from "basehub/react-pump";
-import { Intro } from "./components/intro";
-import { HeroPost, PostMetaFragment } from "./components/hero-post";
-import { MoreStories } from "./components/more-stories";
+import { Pump } from "basehub/react-pump"
+import { Intro } from "./components/intro"
+import { HeroPost, PostMetaFragment } from "./components/hero-post"
+import { MoreStories } from "./components/more-stories"
 
-export const dynamic = "force-static";
+export const dynamic = "force-static"
 
 export default async function Page() {
   return (
@@ -21,10 +21,10 @@ export default async function Page() {
       ]}
     >
       {async ([{ blog }]) => {
-        "use server";
+        "use server"
 
-        const heroPost = blog.posts.items[0];
-        const morePosts = blog.posts.items.slice(1);
+        const heroPost = blog.posts.items[0]
+        const morePosts = blog.posts.items.slice(1)
 
         return (
           <main>
@@ -34,8 +34,8 @@ export default async function Page() {
               <MoreStories morePosts={morePosts} title={blog.morePosts} />
             </section>
           </main>
-        );
+        )
       }}
     </Pump>
-  );
+  )
 }

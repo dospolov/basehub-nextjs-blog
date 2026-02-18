@@ -1,25 +1,25 @@
-"use client";
+"use client"
 
-import { useState } from "react";
-import CheckIcon from "./icons/check-icon";
-import ClipboardIcon from "./icons/clipboard-icon";
+import { useState } from "react"
+import CheckIcon from "./icons/check-icon"
+import ClipboardIcon from "./icons/clipboard-icon"
 
 export default function CopyToClipboard({ code }: { code: string }) {
-  const [copied, setCopied] = useState(false);
+  const [copied, setCopied] = useState(false)
 
   const copyToClipboard = async () => {
     try {
-      await navigator.clipboard.writeText(code);
-      setCopied(true);
-      console.log("Copied to clipboard");
+      await navigator.clipboard.writeText(code)
+      setCopied(true)
+      console.log("Copied to clipboard")
     } catch (error) {
-      console.error("Error copying to clipboard", error);
+      console.error("Error copying to clipboard", error)
     } finally {
       setTimeout(() => {
-        setCopied(false);
-      }, 2000);
+        setCopied(false)
+      }, 2000)
     }
-  };
+  }
 
   return (
     <button
@@ -28,5 +28,5 @@ export default function CopyToClipboard({ code }: { code: string }) {
     >
       {copied ? <CheckIcon /> : <ClipboardIcon />}
     </button>
-  );
+  )
 }
